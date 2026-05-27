@@ -1,35 +1,74 @@
 // src/App.jsx
 import React from 'react';
-import { portfolioItems } from './data';
-import './App.css'; // You can add your styling here
+import { BrowserRouter, Routes, Route, Link } from 'react-router-dom';
+import HomePage from './pages/HomePage';
+import ProjectPage from './pages/ProjectPage';
+import { GitHubIcon, MailIcon } from './components/Icons';
+import './App.css';
+
+function Layout({ children }) {
+  return (
+    <div className="portfolio">
+      {/* Navigation */}
+      <nav className="nav" id="navigation">
+        <Link to="/portofolio/" className="nav-logo">
+          <span className="dot" aria-hidden="true"></span>
+          Sebastian
+        </Link>
+        <ul className="nav-links">
+          <li><Link to="/portofolio/#projects">Projects</Link></li>
+          <li>
+            <a
+              href="https://github.com/sebry4n"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="accent-link"
+            >
+              GitHub
+            </a>
+          </li>
+        </ul>
+      </nav>
+
+      {/* Page Content */}
+      <main className="main-content">
+        {children}
+      </main>
+
+      {/* Footer */}
+      <footer className="footer" id="footer">
+        <div className="footer-content">
+          <p className="footer-text">
+            Built with <span className="heart" aria-label="love">♥</span> using React & Vite
+          </p>
+          <ul className="footer-links">
+            <li>
+              <a href="https://github.com/sebry4n" target="_blank" rel="noopener noreferrer">
+                <GitHubIcon /> GitHub
+              </a>
+            </li>
+            <li>
+              <a href="mailto:hello@example.com">
+                <MailIcon /> Email
+              </a>
+            </li>
+          </ul>
+        </div>
+      </footer>
+    </div>
+  );
+}
 
 function App() {
   return (
-    <div className="portfolio-container">
-      <header>
-        <h1>My Engineering Portfolio</h1>
-        <p>Showcasing projects in embedded systems, AI programming, and robotics.</p>
-      </header>
-
-      <main className="grid-container">
-        {portfolioItems.map((item) => (
-          <div key={item.id} className="card">
-            <h2>{item.title}</h2>
-            <p>{item.description}</p>
-
-            <div className="tags">
-              {item.tags.map((tag, index) => (
-                <span key={index} className="tag">{tag}</span>
-              ))}
-            </div>
-
-            <a href={item.link} target="_blank" rel="noopener noreferrer" className="btn">
-              View Project
-            </a>
-          </div>
-        ))}
-      </main>
-    </div>
+    <BrowserRouter>
+      <Layout>
+        <Routes>
+          <Route path="/portofolio/" element={<HomePage />} />
+          <Route path="/portofolio/project/:slug" element={<ProjectPage />} />
+        </Routes>
+      </Layout>
+    </BrowserRouter>
   );
 }
 
