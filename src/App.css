@@ -89,6 +89,70 @@
   background: rgba(91, 94, 246, 0.14);
 }
 
+.nav-right {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+}
+
+/* ===== Theme Toggle ===== */
+.theme-toggle {
+  position: relative;
+  width: 40px;
+  height: 40px;
+  border-radius: var(--radius-full);
+  border: 1px solid var(--color-border);
+  background: var(--color-surface);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all var(--duration-normal) var(--ease-out);
+  overflow: hidden;
+  flex-shrink: 0;
+}
+
+.theme-toggle:hover {
+  border-color: var(--color-accent-border);
+  background: var(--color-accent-subtle);
+  transform: scale(1.05);
+}
+
+.theme-toggle:active {
+  transform: scale(0.95);
+}
+
+.theme-icon {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all var(--duration-normal) var(--ease-out);
+}
+
+.theme-icon svg {
+  width: 18px;
+  height: 18px;
+  color: var(--color-text-secondary);
+  transition: color var(--duration-normal) var(--ease-out);
+}
+
+.theme-toggle:hover .theme-icon svg {
+  color: var(--color-accent);
+}
+
+.theme-icon:not(.active) {
+  opacity: 0;
+  transform: rotate(90deg) scale(0.5);
+}
+
+.theme-icon.active {
+  opacity: 1;
+  transform: rotate(0deg) scale(1);
+}
+
 /* ===== Hero ===== */
 .hero-section {
   text-align: center;
