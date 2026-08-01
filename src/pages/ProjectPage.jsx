@@ -16,6 +16,10 @@ import {
   PlayIcon,
 } from '../components/Icons';
 
+// Prefix media paths with the Vite base URL so they resolve under /portofolio/
+// on GitHub Pages (e.g. "/assets/x.png" -> "/portofolio/assets/x.png").
+const assetUrl = (src) => `${import.meta.env.BASE_URL}${src.replace(/^\//, '')}`;
+
 function ProjectPage() {
   const { slug } = useParams();
   const project = portfolioItems.find((p) => p.slug === slug);
@@ -142,7 +146,7 @@ function ProjectPage() {
                 >
                   {item.type === 'image' ? (
                     <img
-                      src={item.src}
+                      src={assetUrl(item.src)}
                       alt={item.caption}
                       className="gallery-image"
                       loading="lazy"
@@ -150,7 +154,7 @@ function ProjectPage() {
                   ) : (
                     <div className="video-container">
                       <video
-                        src={item.src}
+                        src={assetUrl(item.src)}
                         controls
                         preload="metadata"
                         className="gallery-video"
@@ -285,13 +289,13 @@ function ProjectPage() {
 
             {project.media[lightboxIndex].type === 'image' ? (
               <img
-                src={project.media[lightboxIndex].src}
+                src={assetUrl(project.media[lightboxIndex].src)}
                 alt={project.media[lightboxIndex].caption}
                 className="lightbox-image"
               />
             ) : (
               <video
-                src={project.media[lightboxIndex].src}
+                src={assetUrl(project.media[lightboxIndex].src)}
                 controls
                 autoPlay
                 className="lightbox-video"
