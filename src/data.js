@@ -23,42 +23,12 @@ Key technical challenges included achieving low-latency control over wireless ne
             "Deployed on Jetson Xavier NX with optimized compute resource allocation"
         ],
         media: [
-            { type: "image", src: "/assets/robot-dog-teleoperation/hero.png", caption: "Robot Dog System Overview" },
             { type: "image", src: "/assets/robot-dog-teleoperation/realsense-graspnet.jpeg", caption: "RealSense + GraspNet Perception" },
             { type: "video", src: "/assets/robot-dog-teleoperation/teleoperation-test.mp4", caption: "Teleoperation Test" },
         ]
     },
     {
         id: 2,
-        slug: "solar-powered-railway-gate",
-        title: "Solar-Powered Railway Gate",
-        description: "Designed an IoT railway gate system incorporating ESP32 controllers, SX1278 LoRa communication, and MPU6050 vibration analysis.",
-        longDescription: `This IoT project tackled the challenge of automating railway gate operations in remote areas where reliable power and network infrastructure are limited. The system uses solar panels for energy independence and LoRa (Long Range) wireless communication for connectivity without cellular networks.
-
-The core sensing mechanism relies on MPU6050 accelerometers mounted on the railway tracks to detect approaching trains through vibration pattern analysis. An ESP32 microcontroller processes the vibration data using a custom signal processing pipeline that distinguishes between train vibrations and environmental noise (vehicles, weather, etc.).
-
-When a train is detected, the system wirelessly triggers the gate mechanism at the crossing via SX1278 LoRa modules, achieving reliable communication over distances exceeding 2km. The entire system is powered by a solar panel and battery setup, enabling deployment in areas without grid electricity.`,
-        tags: ["ESP32", "Embedded Systems", "LoRa"],
-        icon: "iot",
-        link: "https://github.com/yourusername/repo-link",
-        role: "Hardware & Firmware Engineer",
-        duration: "Mar 2024 — Jul 2024",
-        highlights: [
-            "Designed a solar-powered system achieving 24/7 autonomous operation",
-            "Implemented vibration-based train detection with 98% accuracy using MPU6050",
-            "Established LoRa communication link with 2km+ reliable range",
-            "Built custom signal processing pipeline on ESP32 for real-time analysis",
-            "Created a web dashboard for remote system monitoring and diagnostics"
-        ],
-        media: [
-            { type: "image", src: "/assets/solar-powered-railway-gate/hero.png", caption: "System Architecture Overview" },
-            // Add more images/videos here:
-            // { type: "video", src: "/assets/solar-powered-railway-gate/demo.mp4", caption: "Gate Operation Demo" },
-            // { type: "image", src: "/assets/solar-powered-railway-gate/pcb.png", caption: "Custom PCB Design" },
-        ]
-    },
-    {
-        id: 3,
         slug: "agricultural-drone",
         title: "Agricultural Drone Architecture",
         description: "Hardware integration and communication setup using Pixhawk 6X and MAVROS for a 22L payload heavy-lift UAV.",
@@ -80,71 +50,49 @@ A significant engineering challenge was managing the changing center of gravity 
             "Achieved 15-minute flight endurance at maximum payload capacity"
         ],
         media: [
-            { type: "image", src: "/assets/agricultural-drone/hero.png", caption: "Drone Platform Overview" },
-            { type: "image", src: "/assets/agricultural-drone/field-test-screenshot.png", caption: "Field Test Telemetry" },
-            { type: "video", src: "/assets/agricultural-drone/flight-test-v2.mp4", caption: "Flight Test (v2)" },
+            { type: "image", src: "/assets/agricultural-drone/drone-v1.png", caption: "Drone Build (V1)" },
+            { type: "image", src: "/assets/agricultural-drone/drone-v2.jpg", caption: "Drone Build (V2)" },
+            { type: "image", src: "/assets/agricultural-drone/drone-v3.jpeg", caption: "Drone Build (V3)" },
+            { type: "video", src: "/assets/agricultural-drone/test-v3.mp4", caption: "Flight Test (V3)" },
+            { type: "video", src: "/assets/agricultural-drone/flight-test-v2.mp4", caption: "Flight Test (V2)" },
             { type: "video", src: "/assets/agricultural-drone/field-test.mp4", caption: "Field Test" },
             { type: "video", src: "/assets/agricultural-drone/spray-volume-test.mp4", caption: "Spray Volume Test" },
-            { type: "video", src: "/assets/agricultural-drone/motor-test-v2.mp4", caption: "Motor Test (v2)" },
+            { type: "video", src: "/assets/agricultural-drone/motor-test-v2.mp4", caption: "Motor Test (V2)" },
         ]
     },
     {
-        id: 4,
-        slug: "multi-class-image-classification",
-        title: "Multi-Class Image Classification",
-        description: "Optimized a multi-layer perceptron (MLP) model achieving over 92% accuracy for a 12-class categorization task.",
-        longDescription: `This machine learning project involved designing and optimizing a multi-layer perceptron (MLP) neural network for a challenging 12-class image categorization task. The goal was to achieve maximum classification accuracy while maintaining reasonable inference speed for potential edge deployment.
-
-The optimization process included systematic hyperparameter tuning across learning rates, batch sizes, network depth, hidden layer widths, activation functions, and regularization strategies. Techniques such as dropout, batch normalization, and learning rate scheduling were evaluated and combined to push accuracy beyond the 92% threshold.
-
-Data augmentation strategies including random cropping, horizontal flipping, and color jittering were employed to increase the effective training set size and improve model generalization. The final model achieved 92.4% accuracy on the held-out test set, representing a 7% improvement over the baseline architecture.`,
-        tags: ["PyTorch", "AI Programming", "Machine Learning"],
-        icon: "ai",
-        link: "https://github.com/yourusername/repo-link",
-        role: "ML Engineer",
-        duration: "Feb 2025 — Apr 2025",
-        highlights: [
-            "Achieved 92.4% test accuracy on a 12-class categorization benchmark",
-            "Implemented systematic hyperparameter optimization across 6 dimensions",
-            "Applied data augmentation pipeline increasing effective dataset by 4x",
-            "Utilized dropout, batch normalization, and LR scheduling for regularization",
-            "Improved baseline accuracy by 7% through architecture optimization"
-        ],
-        media: [
-            { type: "image", src: "/assets/multi-class-image-classification/hero.png", caption: "Model Architecture Diagram" },
-            // Add more images/videos here:
-            // { type: "image", src: "/assets/multi-class-image-classification/confusion-matrix.png", caption: "Confusion Matrix" },
-            // { type: "image", src: "/assets/multi-class-image-classification/training-curves.png", caption: "Training & Validation Curves" },
-        ]
-    },
-    {
-        id: 5,
+        id: 3,
         slug: "safmc-2026",
         title: "LiDAR Localization Drone (SAFMC 2026)",
         description: "Developed a LiDAR-based localization and mapping pipeline using GICP scan matching for GPS-denied autonomous flight, built for the Singapore Amazing Flying Machine Competition 2026.",
         longDescription: `This project targets autonomous drone navigation in GPS-denied environments for the Singapore Amazing Flying Machine Competition (SAFMC) 2026. The core of the system is a LiDAR-based localization pipeline that lets the drone estimate its own pose without relying on satellite positioning.
 
-The pipeline uses Generalized Iterative Closest Point (GICP) scan matching to align successive LiDAR point clouds and track the drone's motion over time. Registering each incoming scan against the accumulated map produces a drift-corrected pose estimate that feeds directly into the flight controller for stable, autonomous position hold and waypoint following.
+The pipeline uses Iterative Closest Point ICP scan matching to align successive LiDAR point clouds and track the drone's motion over time. Registering each incoming scan against the accumulated map produces a drift-corrected pose estimate that feeds directly into the flight controller for stable, autonomous position hold and waypoint following.
 
 Key challenges included keeping the scan-matching pipeline real-time on an onboard companion computer, filtering noisy point clouds from a lightweight LiDAR, and fusing the LiDAR-derived pose with the flight controller's inertial estimates for robust indoor flight.`,
-        tags: ["LiDAR", "GICP", "SLAM", "ROS"],
+        tags: ["LiDAR", "ICP", "SLAM", "ROS"],
         icon: "drone",
         link: "https://github.com/sebry4n",
         role: "Perception & Localization Engineer",
         duration: "2026",
         highlights: [
             "Built a LiDAR-based localization pipeline for GPS-denied autonomous flight",
-            "Implemented GICP scan matching for real-time point-cloud registration",
+            "Implemented ICP scan matching for real-time point-cloud registration",
             "Fused LiDAR pose estimates with flight-controller inertial data",
             "Validated onboard, real-time performance on a companion computer",
             "Developed for the Singapore Amazing Flying Machine Competition 2026"
         ],
         media: [
-            { type: "video", src: "/assets/safmc-2026/lidar-gicp-test.mp4", caption: "LiDAR GICP Localization Test" },
+            { type: "image", src: "/assets/safmc-2026/3d-render.jpeg", caption: "3D Design" },
+            { type: "image", src: "/assets/safmc-2026/three-drones.jpeg", caption: "Three-Drone Setup" },
+            { type: "video", src: "/assets/safmc-2026/lidar-icp-test.mp4", caption: "LiDAR ICP Localization Test" },
+            { type: "video", src: "/assets/safmc-2026/competition-1.mp4", caption: "Competition Run 1" },
+            { type: "video", src: "/assets/safmc-2026/competition-2.mp4", caption: "Competition Run 2" },
+            { type: "video", src: "/assets/safmc-2026/flight-clip.mp4", caption: "Flight Footage" },
         ]
     },
     {
-        id: 6,
+        id: 4,
         slug: "safmc-2025",
         title: "Autonomous Mission Drone (SAFMC 2025)",
         description: "Built an autonomous drone for SAFMC 2025 featuring obstacle avoidance, AR-tag detection, a custom payload mechanism, and a wearable controller interface.",
@@ -174,7 +122,7 @@ To give the operator intuitive control during the manual phases of the mission, 
         ]
     },
     {
-        id: 7,
+        id: 5,
         slug: "drone-krti-2024",
         title: "Autonomous Payload Drone (KRTI 2024)",
         description: "Designed an autonomous drone with a custom payload dropper mechanism for the Kontes Robot Terbang Indonesia (KRTI) 2024 competition.",
@@ -201,7 +149,7 @@ The system was validated through competition trials, tuning both the flight beha
         ]
     },
     {
-        id: 8,
+        id: 6,
         slug: "drone-krti-2025",
         title: "Autonomous Drone (KRTI 2025)",
         description: "Developed an autonomous drone for the Kontes Robot Terbang Indonesia (KRTI) 2025 competition, building on prior mission and flight-control experience.",
@@ -223,7 +171,7 @@ The work covered the full flight pipeline — from flight-controller configurati
         ]
     },
     {
-        id: 9,
+        id: 7,
         slug: "adas-mmwave-radar",
         title: "mmWave Radar ADAS",
         description: "Built a data collection and logging pipeline around a mmWave radar sensor for an Advanced Driver Assistance System (ADAS) perception project.",

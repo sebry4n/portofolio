@@ -729,6 +729,14 @@
   background: #000;
 }
 
+/* Native fullscreen: show the whole frame instead of the cropped 'cover' thumbnail */
+.gallery-video:fullscreen,
+.gallery-video:-webkit-full-screen {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
 .gallery-caption {
   padding: var(--space-3) var(--space-4);
   font-size: var(--text-sm);
